@@ -79,12 +79,124 @@ if uploaded_file:
     st.success("Dataset Cleaned and Column Names Sanitized")
 
     # --- Debugging Info ---
-    st.write("--- Debugging Info ---")
-    st.write("Data Types after cleaning:")
-    st.write(df.dtypes)
+    # =========================
+    # Dataset Insights Section
+    # =========================
+    
+    st.markdown("""
+    <style>
+    .insight-box {
+        background-color: #111827;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #374151;
+        margin-bottom: 20px;
+    }
+    
+    .insight-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+    }
+    
+    .metric-card {
+        background-color: #1F2937;
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid #374151;
+    }
+    
+    .metric-value {
+        font-size: 28px;
+        font-weight: bold;
+        color: #60A5FA;
+    }
+    
+    .metric-label {
+        font-size: 14px;
+        color: #D1D5DB;
+    }
+    
+    .column-tag {
+        display: inline-block;
+        background-color: #2563EB;
+        color: white;
+        padding: 6px 12px;
+        margin: 5px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     numeric_cols = df.select_dtypes(include='number').columns
-    st.write(f"Numeric Columns detected: {', '.join(numeric_cols)}")
-    st.write("------------------------")
+    categorical_cols = df.select_dtypes(include='object').columns
+    
+    st.markdown("""
+    <div class="insight-box">
+    <div class="insight-title">
+    📊 Dataset Insights
+    </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Metrics Row
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-value">{df.shape[0]}</div>
+            <div class="metric-label">Rows</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-value">{df.shape[1]}</div>
+            <div class="metric-label">Columns</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-value">{len(numeric_cols)}</div>
+            <div class="metric-label">Numeric Features</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col4:
+        st.markdown(f"""
+        <div class="metric-card">
+            <div class="metric-value">{len(categorical_cols)}</div>
+            <div class="metric-label">Categorical Features</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("### 🔢 Numeric Columns")
+    
+    numeric_html = ""
+    
+    for col in numeric_cols:
+        numeric_html += f'<span class="column-tag">{col}</span>'
+    
+    st.markdown(numeric_html, unsafe_allow_html=True)
+    
+    st.markdown("### 🔤 Categorical Columns")
+    
+    cat_html = ""
+    
+    for col in categorical_cols:
+        cat_html += f'<span class="column-tag">{col}</span>'
+    
+    st.markdown(cat_html, unsafe_allow_html=True)
+    
+    with st.expander("📄 View Data Types"):
+        st.dataframe(df.dtypes.astype(str))
 
     # Dataset Summary
     st.write("## Dataset Summary")

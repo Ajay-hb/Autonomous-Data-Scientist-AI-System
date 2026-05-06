@@ -13,7 +13,7 @@ from sklearn.svm import SVC, SVR
 import pandas as pd
 import warnings
 
-from src.utils.helpers import sanitize_col_names # Import from helpers
+from helpers import sanitize_col_names # Import from helpers
 
 # Suppress specific CatBoost warnings and other common warnings from sklearn
 warnings.filterwarnings("ignore", category=UserWarning, module='catboost')

@@ -1,0 +1,15 @@
+streamlit
+pandas
+numpy
+scikit-learn
+xgboost
+plotly
+matplotlib
+seaborn
+optuna
+shap
+openpyxl
+ydata-profiling
+catboost
+lightgbm
+reportlab

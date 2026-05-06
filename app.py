@@ -92,8 +92,7 @@ if uploaded_file:
     st.session_state.df_summary.update({
         "Rows": df.shape[0],
         "Columns": df.shape[1],
-        "Missing Values": int(df.isnull().sum().sum()),
-        
+        "Missing Values": int(df.isnull().sum().sum()),     
     })
     # Capture statistical summary for PDF
     st.session_state.df_summary['Statistical Summary'] = df.describe().to_html()

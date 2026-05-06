@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="AutoDS AI Banner" src="https://github.com/user-attachments/assets/34d555d2-dec1-4875-846a-1e4b83f40739" />
+
 
 # 🤖 AutoDS AI  
 ### 🚀 Autonomous AI-Powered Data Scientist Platform

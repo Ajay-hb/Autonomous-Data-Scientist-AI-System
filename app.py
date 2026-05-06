@@ -21,14 +21,14 @@ if 'src.reports.pdf_generator' in sys.modules:
     del sys.modules['src.reports.pdf_generator']
 # --- End of fix ---
 
-from src.preprocessing.cleaning import clean_data
-from src.eda.analysis import dataset_summary
-from src.visualization.charts import plot_histogram, get_matplotlib_seaborn_plot
-from src.modeling.train_model import train_model
-from src.clustering.kmeans_clustering import perform_kmeans_clustering
-from src.clustering.dbscan_clustering import perform_dbscan_clustering
-from src.utils.helpers import sanitize_col_names
-from src.reports.pdf_generator import generate_pdf_report # Import the new PDF generator
+from cleaning import clean_data
+from analysis import dataset_summary
+from charts import plot_histogram, get_matplotlib_seaborn_plot
+from train_model import train_model
+from kmeans_clustering import perform_kmeans_clustering
+from dbscan_clustering import perform_dbscan_clustering
+from helpers import sanitize_col_names
+from pdf_generator import generate_pdf_report # Import the new PDF generator
 
 st.set_page_config(
     page_title="AutoDS AI",

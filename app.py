@@ -35,8 +35,8 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🤖 AutoDS AI")
-st.subheader("Autonomous Data Scientist System")
+st.title("🤖 Autonomous Data Scientist AI System")
+
 
 uploaded_file = st.file_uploader(
     "Upload CSV or Excel File",
@@ -79,11 +79,11 @@ if uploaded_file:
     st.success("Dataset Cleaned and Column Names Sanitized")
 
     # --- Debugging Info ---
-    st.write("--- Debugging Info ---")
-    st.write("Data Types after cleaning:")
+    st.write("### Debugging Info")
+    st.write("##Data Types after cleaning:")
     st.write(df.dtypes)
     numeric_cols = df.select_dtypes(include='number').columns
-    st.write(f"Numeric Columns detected: {', '.join(numeric_cols)}")
+    st.write(f"###Numeric Columns detected: {', '.join(numeric_cols)}")
     st.write("------------------------")
 
     # Dataset Summary

@@ -80,10 +80,10 @@ if uploaded_file:
 
     # --- Debugging Info ---
     st.write("### Debugging Info")
-    st.write("##Data Types after cleaning:")
+    st.write("###Data Types after cleaning:")
     st.write(df.dtypes)
     numeric_cols = df.select_dtypes(include='number').columns
-    st.write(f"###Numeric Columns detected: {', '.join(numeric_cols)}")
+    st.write(f"umeric Columns detected: {', '.join(numeric_cols)}")
     st.write("------------------------")
 
     # Dataset Summary

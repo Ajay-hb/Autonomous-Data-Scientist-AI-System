@@ -299,7 +299,7 @@ if uploaded_file:
 
         if st.button("Train Model with Tuning", key="train_model_with_tuning"):
             if model_selection:
-                from src.modeling.hyperparameter_tuning import optimize_hyperparameters
+                from hyperparameter_tuning import optimize_hyperparameters
                 with st.spinner(f"Running {tuning_method} Hyperparameter Tuning..."):
                     metric_value, metric_name, best_params, best_model = optimize_hyperparameters(
                         df, target_col, model_selection, problem_type,

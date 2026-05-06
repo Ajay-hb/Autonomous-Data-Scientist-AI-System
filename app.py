@@ -93,7 +93,7 @@ if uploaded_file:
         "Rows": df.shape[0],
         "Columns": df.shape[1],
         "Missing Values": int(df.isnull().sum().sum()),
-        "Data Types": df.dtypes.to_frame('Data Type').to_html() # Convert dtypes to a DataFrame then to HTML for report
+        
     })
     # Capture statistical summary for PDF
     st.session_state.df_summary['Statistical Summary'] = df.describe().to_html()

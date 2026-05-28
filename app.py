@@ -1001,8 +1001,4 @@ elif page == "Report":
 # ─────────────────────────────────────────────
 st.markdown('<div class="footer">AutoDS AI · Autonomous Data Scientist · Built with Streamlit & Python</div>', unsafe_allow_html=True)
 ENDOFFILE
-echo "Done"
 
-Done
-
-You are out of free messa

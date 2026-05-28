@@ -1000,5 +1000,5 @@ elif page == "Report":
 #  FOOTER
 # ─────────────────────────────────────────────
 st.markdown('<div class="footer">AutoDS AI · Autonomous Data Scientist · Built with Streamlit & Python</div>', unsafe_allow_html=True)
-ENDOFFILE
+
 

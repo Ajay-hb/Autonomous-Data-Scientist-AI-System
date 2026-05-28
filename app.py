@@ -1,6 +1,3 @@
-bash
-
-cat > /mnt/user-data/outputs/autods_app.py << 'ENDOFFILE'
 import streamlit as st
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
